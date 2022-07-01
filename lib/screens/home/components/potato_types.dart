@@ -22,7 +22,7 @@ class PotatoTypes extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen("Russet"),
                 ),
               );
             },
@@ -35,7 +35,7 @@ class PotatoTypes extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen("Sweet"),
                 ),
               );
             },
@@ -106,6 +106,7 @@ class RecomendPlantCard extends StatelessWidget {
         bottom: kDefaultPadding * 2.5,
       ),
       width: size.width * 0.4,
+      constraints: BoxConstraints(maxWidth: 350),
       child: Column(
         children: <Widget>[
           ClipRRect(

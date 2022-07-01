@@ -41,7 +41,12 @@ class HeaderWithSearchBox extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-                Image.asset("assets/images/logo.png")
+                Container(
+                  child: Image.asset("assets/images/logo.png"),
+                  constraints: BoxConstraints(
+                    maxHeight: 50,
+                  ),
+                ),
               ],
             ),
           ),
