@@ -1,4 +1,4 @@
-# potato_kingdom
+# Potato Kingdom Mobile App
 
 A flutter app for potato lovers.
 You can find types and recipes of potatoes here.
