@@ -5,113 +5,43 @@ import '../../../constants.dart';
 import 'icon_card.dart';
 
 class ImageAndIcons extends StatelessWidget {
-  const ImageAndIcons({
-    Key key,
-    @required this.size,
-  }) : super(key: key);
+  const ImageAndIcons({Key key, @required this.size, this.title})
+      : super(key: key);
 
   final Size size;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: kDefaultPadding * 3),
+      padding: const EdgeInsets.only(
+          bottom: kDefaultPadding * 3, top: kDefaultPadding),
       child: SizedBox(
         height: size.height * 0.4,
-        child: Stack(
-          children: [
-            Container(
-              height: size.height * 0.8,
-              width: size.width * 0.75,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(63),
-                  bottomLeft: Radius.circular(63),
-                  topRight: Radius.circular(63),
-                  bottomRight: Radius.circular(63),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 60,
-                    color: kPrimaryColor.withOpacity(0.29),
-                  ),
-                ],
-                image: DecorationImage(
-                  alignment: Alignment.centerLeft,
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/images/img.png"),
-                ),
-              ),
+        child: Container(
+          height: size.height * 0.4,
+          width: size.width * 0.8,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              bottomLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+              bottomRight: Radius.circular(30),
             ),
-            Positioned(
-              left: 0,
-              right: 0,
-              child: IconButton(
-                padding: EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding, vertical: kDefaultPadding),
-                alignment: Alignment.topLeft,
-                icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, 10),
+                blurRadius: 60,
+                color: kPrimaryColor.withOpacity(0.29),
               ),
-            )
-          ],
+            ],
+            image: DecorationImage(
+              // alignment: Alignment.centerLeft,
+              fit: BoxFit.cover,
+              image: AssetImage("assets/images/${this.title}.jfif"),
+            ),
+          ),
         ),
-
-        // Row(
-        //   children: <Widget>[
-        //     Expanded(
-        //       child: Padding(
-        //         padding:
-        //             const EdgeInsets.symmetric(vertical: kDefaultPadding * 3),
-        //         child: Column(
-        //           children: <Widget>[
-        //             Align(
-        //               alignment: Alignment.topLeft,
-        //               child: IconButton(
-        //                 padding:
-        //                     EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        //                 icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
-        //                 onPressed: () {
-        //                   Navigator.pop(context);
-        //                 },
-        //               ),
-        //             ),
-        //             // Spacer(),
-        //             // IconCard(icon: "assets/icons/sun.svg"),
-        //             // IconCard(icon: "assets/icons/icon_2.svg"),
-        //             // IconCard(icon: "assets/icons/icon_3.svg"),
-        //             // IconCard(icon: "assets/icons/icon_4.svg"),
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //     Container(
-        //       height: size.height * 0.8,
-        //       width: size.width * 0.75,
-        //       decoration: BoxDecoration(
-        //         borderRadius: BorderRadius.only(
-        //           topLeft: Radius.circular(63),
-        //           bottomLeft: Radius.circular(63),
-        //         ),
-        //         boxShadow: [
-        //           BoxShadow(
-        //             offset: Offset(0, 10),
-        //             blurRadius: 60,
-        //             color: kPrimaryColor.withOpacity(0.29),
-        //           ),
-        //         ],
-        //         image: DecorationImage(
-        //           alignment: Alignment.centerLeft,
-        //           fit: BoxFit.cover,
-        //           image: AssetImage("assets/images/img.png"),
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }

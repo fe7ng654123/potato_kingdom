@@ -19,12 +19,7 @@ class PotatoTypes extends StatelessWidget {
             title: "Russet",
             price: 440,
             press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen("Russet"),
-                ),
-              );
+              GoDetail(context, "Russet");
             },
           ),
           RecomendPlantCard(
@@ -32,51 +27,67 @@ class PotatoTypes extends StatelessWidget {
             title: "Sweet",
             price: 44,
             press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen("Sweet"),
-                ),
-              );
+              GoDetail(context, "Sweet");
             },
           ),
           RecomendPlantCard(
             image: "assets/images/Red.jfif",
             title: "Red",
             price: 440,
-            press: () {},
+            press: () {
+              GoDetail(context, "Red");
+            },
           ),
           RecomendPlantCard(
             image: "assets/images/White.jfif",
             title: "White",
             price: 440,
-            press: () {},
+            press: () {
+              GoDetail(context, "White");
+            },
           ),
           RecomendPlantCard(
             image: "assets/images/Fingerling.jfif",
             title: "Fingerling",
             price: 440,
-            press: () {},
+            press: () {
+              GoDetail(context, "Fingerling");
+            },
           ),
           RecomendPlantCard(
             image: "assets/images/Yellow.jfif",
             title: "Yellow",
             price: 440,
-            press: () {},
+            press: () {
+              GoDetail(context, "Yellow");
+            },
           ),
           RecomendPlantCard(
             image: "assets/images/Purple.jfif",
             title: "Purple",
             price: 440,
-            press: () {},
+            press: () {
+              GoDetail(context, "Purple");
+            },
           ),
           RecomendPlantCard(
             image: "assets/images/Petite.jfif",
             title: "Petite",
             price: 440,
-            press: () {},
+            press: () {
+              GoDetail(context, "Petite");
+            },
           ),
         ],
+      ),
+    );
+  }
+
+  void GoDetail(BuildContext context, String title) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailsScreen(title),
       ),
     );
   }
@@ -109,10 +120,14 @@ class RecomendPlantCard extends StatelessWidget {
       constraints: BoxConstraints(maxWidth: 350),
       child: Column(
         children: <Widget>[
-          ClipRRect(
+          GestureDetector(
+            onTap: press,
+            child: ClipRRect(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-              child: Image.asset(image)),
+              child: Image.asset(image),
+            ),
+          ),
           // Image.asset(image, fit: BoxFit.contain),
           GestureDetector(
             onTap: press,
