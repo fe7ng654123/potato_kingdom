@@ -164,14 +164,6 @@ class RecomendPlantCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // Spacer(),
-                  // Text(
-                  //   '\$$price',
-                  //   style: Theme.of(context)
-                  //       .textTheme
-                  //       .button
-                  //       .copyWith(color: kPrimaryColor),
-                  // )
                 ],
               ),
             ),
