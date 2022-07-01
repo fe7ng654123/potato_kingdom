@@ -15,3 +15,18 @@ class DetailsScreen extends StatelessWidget {
     );
   }
 }
+
+class DetailsScreenRecipe extends StatelessWidget {
+  const DetailsScreenRecipe(this.title, this.index);
+  final title;
+  final index;
+
+  @override
+  Widget build(BuildContext context) {
+    // print(this.title);
+    return Scaffold(
+      appBar: AppBar(backgroundColor: kPrimaryColor),
+      body: BodyRecipe(this.title, this.index),
+    );
+  }
+}
