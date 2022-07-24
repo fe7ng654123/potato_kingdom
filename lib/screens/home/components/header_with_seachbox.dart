@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:potato_kingdom/screens/auth/LogInScreen.dart';
 
 import '../../../constants.dart';
 
@@ -10,6 +11,15 @@ class HeaderWithSearchBox extends StatelessWidget {
   }) : super(key: key);
 
   final Size size;
+
+  void GoLogIn(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MyLogin(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +51,15 @@ class HeaderWithSearchBox extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-                Container(
-                  child: Image.asset("assets/images/logo.png"),
-                  constraints: BoxConstraints(
-                    maxHeight: 50,
+                InkWell(
+                  child: Container(
+                    child: Image.asset("assets/images/logo.png"),
+                    constraints: BoxConstraints(
+                      maxHeight: 50,
+                    ),
+                  
                   ),
+                  onTap: (() => GoLogIn(context)),
                 ),
               ],
             ),
