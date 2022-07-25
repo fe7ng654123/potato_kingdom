@@ -28,13 +28,16 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
   }
 
   void updateUserValue(String phone) {
-    String formattedPhoneNumber = "(" +
-        phone.substring(0, 3) +
-        ") " +
-        phone.substring(3, 6) +
-        "-" +
-        phone.substring(6, phone.length);
+    // String formattedPhoneNumber = "(" +
+    //     phone.substring(0, 3) +
+    //     ") " +
+    //     phone.substring(3, 6) +
+    //     "-" +
+    //     phone.substring(6, phone.length);
+    String formattedPhoneNumber =
+        phone.substring(0, 4) + " " + phone.substring(4, phone.length);
     user.phone = formattedPhoneNumber;
+    // user.phone = phone;
   }
 
   @override
@@ -66,7 +69,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                               return 'Please enter your phone number';
                             } else if (isAlpha(value)) {
                               return 'Only Numbers Please';
-                            } else if (value.length < 10) {
+                            } else if (value.length < 8) {
                               return 'Please enter a VALID phone number';
                             }
                             return null;

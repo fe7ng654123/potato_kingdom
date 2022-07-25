@@ -12,9 +12,8 @@ class UserData {
         "https://upload.wikimedia.org/wikipedia/en/0/0b/Darth_Vader_in_The_Empire_Strikes_Back.jpg",
     name: 'Test Test',
     email: 'test.test@gmail.com',
-    phone: '(852) 91234 5678',
-    aboutMeDescription:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...',
+    phone: '91234 5678',
+    aboutMeDescription: 'An ordinary potato lover..',
   );
 
   static Future init() async =>
