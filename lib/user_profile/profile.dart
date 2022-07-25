@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/profile_page.dart';
 import 'package:flutter/services.dart';
+import 'package:potato_kingdom/constants.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -22,29 +23,30 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: MaterialApp(
         title: 'User Profile',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            primaryColor: Colors.black,
-            fontFamily: 'Roboto',
-            elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    shadowColor: Colors.grey,
-                    elevation: 20,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(0.0))))),
-            inputDecorationTheme: InputDecorationTheme(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(0.0))),
-            textButtonTheme: TextButtonThemeData(
-              style: TextButton.styleFrom(
-                alignment: Alignment.centerLeft,
-                primary: Colors.black,
-              ),
-            )),
+          primaryColor: Colors.black,
+          fontFamily: 'Roboto',
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                  shadowColor: Colors.grey,
+                  elevation: 20,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(0.0))))),
+          inputDecorationTheme: InputDecorationTheme(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(0.0))),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+              alignment: Alignment.centerLeft,
+              primary: Colors.black,
+            ),
+          ),
+          textTheme: TextTheme(),
+        ),
         home: ProfilePage(),
       ),
     );

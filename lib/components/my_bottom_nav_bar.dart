@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:potato_kingdom/user_profile/pages/profile_page.dart';
 import '../user_profile/profile.dart';
 
 import '../constants.dart';
@@ -13,7 +14,7 @@ class MyBottomNavBar extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => MyApp(),
+        builder: (context) => ProfilePage(),
       ),
     );
   }

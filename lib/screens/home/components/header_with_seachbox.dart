@@ -52,12 +52,14 @@ class HeaderWithSearchBox extends StatelessWidget {
                 ),
                 Spacer(),
                 InkWell(
-                  child: Container(
-                    child: Image.asset("assets/images/logo.png"),
-                    constraints: BoxConstraints(
-                      maxHeight: 50,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Container(
+                      child: Image.asset("assets/images/logo.png"),
+                      constraints: BoxConstraints(
+                        maxHeight: 50,
+                      ),
                     ),
-                  
                   ),
                   onTap: (() => GoLogIn(context)),
                 ),

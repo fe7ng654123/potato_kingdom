@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../constants.dart';
 import '../user/user_data.dart';
 import '../widgets/appbar_widget.dart';
 import 'package:email_validator/email_validator.dart';
@@ -71,6 +72,9 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
                           width: 320,
                           height: 50,
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: kPrimaryColor,
+                            ),
                             onPressed: () {
                               // Validate returns true if the form is valid, or false otherwise.
                               if (_formKey.currentState!.validate() &&

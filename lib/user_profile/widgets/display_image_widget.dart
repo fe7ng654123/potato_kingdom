@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:potato_kingdom/constants.dart';
 
 class DisplayImage extends StatelessWidget {
   final String imagePath;
@@ -15,7 +16,7 @@ class DisplayImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Color.fromRGBO(64, 105, 225, 1);
+    final color = kPrimaryColor;
 
     return Center(
         child: Stack(children: [
@@ -33,6 +34,7 @@ class DisplayImage extends StatelessWidget {
     final image = imagePath.contains('https://')
         ? NetworkImage(imagePath)
         : FileImage(File(imagePath));
+    // : FileImage(File(imagePath));
 
     return CircleAvatar(
       radius: 75,

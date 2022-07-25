@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potato_kingdom/constants.dart';
 import 'package:string_validator/string_validator.dart';
 import '../user/user_data.dart';
 import '../widgets/appbar_widget.dart';
@@ -100,6 +101,9 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                         width: 330,
                         height: 50,
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: kPrimaryColor,
+                          ),
                           onPressed: () {
                             // Validate returns true if the form is valid, or false otherwise.
                             if (_formKey.currentState!.validate() &&

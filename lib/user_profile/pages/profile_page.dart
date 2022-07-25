@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:potato_kingdom/constants.dart';
 import './edit_description.dart';
 import './edit_email.dart';
 import './edit_image.dart';
@@ -21,41 +22,69 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final user = UserData.myUser;
 
-    return Scaffold(
-      body: Column(
-        children: [
-          AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: 10,
+    return Theme(
+      data: ThemeData(
+        primaryColor: Colors.black,
+        fontFamily: 'Roboto',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                shadowColor: Colors.grey,
+                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(0.0))))),
+        inputDecorationTheme: InputDecorationTheme(
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(0.0))),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            alignment: Alignment.centerLeft,
+            primary: Colors.black,
           ),
-          Center(
-              child: Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: Text(
-                    'Edit Profile',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(64, 105, 225, 1),
-                    ),
-                  ))),
-          InkWell(
-              onTap: () {
-                navigateSecondPage(EditImagePage());
-              },
-              child: DisplayImage(
-                imagePath: user.image,
-                onPressed: () {},
-              )),
-          buildUserInfoDisplay(user.name, 'Name', EditNameFormPage()),
-          buildUserInfoDisplay(user.phone, 'Phone', EditPhoneFormPage()),
-          buildUserInfoDisplay(user.email, 'Email', EditEmailFormPage()),
-          Expanded(
-            child: buildAbout(user),
-            flex: 4,
-          )
-        ],
+        ),
+        textTheme: TextTheme(),
+      ),
+      child: Scaffold(
+        body: Column(
+          children: [
+            AppBar(
+              iconTheme: IconThemeData(
+                  color: Colors
+                      .black), // set backbutton color here which will reflect in all screens.
+              leading: BackButton(
+                onPressed: () => Navigator.pop(context),
+              ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
+            Center(
+                child: Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Text(
+                      'Edit Profile',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                        color: kPrimaryColor,
+                      ),
+                    ))),
+            InkWell(
+                onTap: () {
+                  navigateSecondPage(EditImagePage());
+                },
+                child: DisplayImage(
+                  imagePath: user.image,
+                  onPressed: () {},
+                )),
+            buildUserInfoDisplay(user.name, 'Name', EditNameFormPage()),
+            buildUserInfoDisplay(user.phone, 'Phone', EditPhoneFormPage()),
+            buildUserInfoDisplay(user.email, 'Email', EditEmailFormPage()),
+            Expanded(
+              child: buildAbout(user),
+              flex: 4,
+            )
+          ],
+        ),
       ),
     );
   }
@@ -93,9 +122,18 @@ class _ProfilePageState extends State<ProfilePage> {
                             onPressed: () {
                               navigateSecondPage(editPage);
                             },
+                            style: TextButton.styleFrom(
+                              alignment: Alignment.centerLeft,
+                              // primary: Colors.black,
+                            ),
                             child: Text(
                               getValue,
-                              style: TextStyle(fontSize: 16, height: 1.4),
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                fontSize: 16,
+                                height: 1.4,
+                                // color: Colors.black,
+                              ),
                             ))),
                     Icon(
                       Icons.keyboard_arrow_right,
@@ -145,6 +183,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   style: TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
+                                    // color: Colors.black,
                                   ),
                                 ))))),
                 Icon(
