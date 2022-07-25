@@ -5,11 +5,11 @@ import '../../../constants.dart';
 
 class IconCard extends StatelessWidget {
   const IconCard({
-    Key key,
+    Key? key,
     this.icon,
   }) : super(key: key);
 
-  final String icon;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class IconCard extends StatelessWidget {
           ),
         ],
       ),
-      child: SvgPicture.asset(icon),
+      child: SvgPicture.asset(icon!),
     );
   }
 }

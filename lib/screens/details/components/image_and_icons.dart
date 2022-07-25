@@ -5,11 +5,11 @@ import '../../../constants.dart';
 import 'icon_card.dart';
 
 class ImageAndIcons extends StatelessWidget {
-  const ImageAndIcons({Key key, @required this.size, this.title})
+  const ImageAndIcons({Key? key, required this.size, this.title})
       : super(key: key);
 
   final Size size;
-  final String title;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +48,11 @@ class ImageAndIcons extends StatelessWidget {
 }
 
 class ImageRecipe extends StatelessWidget {
-  const ImageRecipe({Key key, @required this.size, this.title})
+  const ImageRecipe({Key? key, required this.size, this.title})
       : super(key: key);
 
   final Size size;
-  final String title;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {

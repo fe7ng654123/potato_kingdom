@@ -4,12 +4,12 @@ import '../../../constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
-    Key key,
+    Key? key,
     this.title,
     this.press,
   }) : super(key: key);
-  final String title;
-  final Function press;
+  final String? title;
+  final Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class TitleWithMoreBtn extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             color: kPrimaryColor,
-            onPressed: press,
+            onPressed: press as void Function()?,
             child: Text(
               "More",
               style: TextStyle(color: Colors.white),
@@ -38,11 +38,11 @@ class TitleWithMoreBtn extends StatelessWidget {
 
 class TitleWithCustomUnderline extends StatelessWidget {
   const TitleWithCustomUnderline({
-    Key key,
+    Key? key,
     this.text,
   }) : super(key: key);
 
-  final String text;
+  final String? text;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: kDefaultPadding / 4),
             child: Text(
-              text,
+              text!,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),

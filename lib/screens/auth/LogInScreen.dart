@@ -4,7 +4,7 @@ import 'package:potato_kingdom/constants.dart';
 class MyLogin extends StatefulWidget {
   // const MyLogin({Key? key}) : super(key: key);
   const MyLogin({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

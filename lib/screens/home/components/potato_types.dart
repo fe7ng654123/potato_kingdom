@@ -5,7 +5,7 @@ import '../../../constants.dart';
 
 class PotatoTypes extends StatelessWidget {
   const PotatoTypes({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -95,7 +95,7 @@ class PotatoTypes extends StatelessWidget {
 
 class RecomendPlantCard extends StatelessWidget {
   const RecomendPlantCard({
-    Key key,
+    Key? key,
     this.image,
     this.title,
     this.country,
@@ -103,9 +103,9 @@ class RecomendPlantCard extends StatelessWidget {
     this.press,
   }) : super(key: key);
 
-  final String image, title, country;
-  final int price;
-  final Function press;
+  final String? image, title, country;
+  final int? price;
+  final Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -121,16 +121,16 @@ class RecomendPlantCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           GestureDetector(
-            onTap: press,
+            onTap: press as void Function()?,
             child: ClipRRect(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-              child: Image.asset(image),
+              child: Image.asset(image!),
             ),
           ),
           // Image.asset(image, fit: BoxFit.contain),
           GestureDetector(
-            onTap: press,
+            onTap: press as void Function()?,
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(

@@ -6,7 +6,7 @@ import 'package:potato_kingdom/screens/details/components/recipe_details.dart';
 
 class PotatoRecipes extends StatelessWidget {
   const PotatoRecipes({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -52,11 +52,11 @@ class PotatoRecipes extends StatelessWidget {
 }
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({Key key, this.image, this.press, this.title})
+  const RecipeCard({Key? key, this.image, this.press, this.title})
       : super(key: key);
-  final String image;
-  final Function press;
-  final String title;
+  final String? image;
+  final Function? press;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class RecipeCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           GestureDetector(
-            onTap: press,
+            onTap: press as void Function()?,
             child: Container(
               constraints: BoxConstraints(
                 maxWidth: 350,
@@ -86,14 +86,14 @@ class RecipeCard extends StatelessWidget {
                     topRight: Radius.circular(10)),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(image),
+                  image: AssetImage(image!),
                 ),
               ),
             ),
           ),
           // Image.asset(image, fit: BoxFit.contain),
           GestureDetector(
-            onTap: press,
+            onTap: press as void Function()?,
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(

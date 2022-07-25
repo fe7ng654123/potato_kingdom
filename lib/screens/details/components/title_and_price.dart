@@ -4,12 +4,12 @@ import '../../../constants.dart';
 
 class TitleAndPrice extends StatelessWidget {
   const TitleAndPrice({
-    Key key,
+    Key? key,
     this.title,
     this.description,
   }) : super(key: key);
 
-  final String title, description;
+  final String? title, description;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class TitleAndPrice extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: "$title Potatoes\n\n",
-                    style: Theme.of(context).textTheme.headline4.copyWith(
+                    style: Theme.of(context).textTheme.headline4!.copyWith(
                         color: kTextColor, fontWeight: FontWeight.bold),
                   ),
                   TextSpan(
