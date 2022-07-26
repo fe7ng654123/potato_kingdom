@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potato_kingdom/constants.dart';
+import 'package:potato_kingdom/screens/auth/RegisterScreen.dart';
 
 class MyLogin extends StatefulWidget {
   // const MyLogin({Key? key}) : super(key: key);
@@ -96,6 +97,12 @@ class _MyLoginState extends State<MyLogin> {
                         TextButton(
                           onPressed: () {
                             Navigator.pushNamed(context, 'register');
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) => MyRegister(),
+                            //   ),
+                            // );
                           },
                           child: const Text(
                             'Sign Up',

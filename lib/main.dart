@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:potato_kingdom/constants.dart';
+import 'package:potato_kingdom/screens/auth/LogInScreen.dart';
+import 'package:potato_kingdom/screens/auth/RegisterScreen.dart';
 import 'package:potato_kingdom/screens/home/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -19,6 +21,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Potato Kingdom',
+      routes: ({
+        'login': (context) => const MyLogin(),
+        'register': (context) => const MyRegister(),
+      }),
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
