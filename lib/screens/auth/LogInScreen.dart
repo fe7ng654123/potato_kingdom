@@ -36,7 +36,7 @@ class _MyLoginState extends State<MyLogin> {
                 padding: EdgeInsets.only(
                     right: 35,
                     left: 35,
-                    top: MediaQuery.of(context).size.height * 0.5),
+                    top: MediaQuery.of(context).size.height * 0.3),
                 child: Column(children: [
                   TextField(
                     decoration: InputDecoration(

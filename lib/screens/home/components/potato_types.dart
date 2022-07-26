@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:potato_kingdom/screens/details/details_screen.dart';
 
 import '../../../constants.dart';
 
-class PotatoTypes extends StatelessWidget {
+class PotatoTypes extends StatefulWidget {
   const PotatoTypes({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<PotatoTypes> createState() => _PotatoTypesState();
+}
+
+class _PotatoTypesState extends State<PotatoTypes> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -93,7 +99,7 @@ class PotatoTypes extends StatelessWidget {
   }
 }
 
-class RecomendPlantCard extends StatelessWidget {
+class RecomendPlantCard extends StatefulWidget {
   const RecomendPlantCard({
     Key? key,
     this.image,
@@ -106,6 +112,20 @@ class RecomendPlantCard extends StatelessWidget {
   final String? image, title, country;
   final int? price;
   final Function? press;
+
+  @override
+  State<RecomendPlantCard> createState() => _RecomendPlantCardState();
+}
+
+class _RecomendPlantCardState extends State<RecomendPlantCard> {
+  Color _iconColor = Colors.grey;
+  IconData _iconAddFavorite = Icons.favorite_border;
+
+  void toggleFavorite() {
+    (_iconColor != Colors.red)
+        ? {_iconColor = Colors.red, _iconAddFavorite = Icons.favorite}
+        : {_iconColor = Colors.grey, _iconAddFavorite = Icons.favorite_border};
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,16 +141,16 @@ class RecomendPlantCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           GestureDetector(
-            onTap: press as void Function()?,
+            onTap: widget.press as void Function()?,
             child: ClipRRect(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-              child: Image.asset(image!),
+              child: Image.asset(widget.image!),
             ),
           ),
           // Image.asset(image, fit: BoxFit.contain),
           GestureDetector(
-            onTap: press as void Function()?,
+            onTap: widget.press as void Function()?,
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
@@ -153,7 +173,7 @@ class RecomendPlantCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                            text: "$title\n",
+                            text: "${widget.title}\n",
                             style: Theme.of(context).textTheme.button),
                         TextSpan(
                           text: 'Potatoes',
@@ -164,10 +184,24 @@ class RecomendPlantCard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Spacer(),
+                  IconButton(
+                    // icon: SvgPicture.asset("assets/icons/heart-icon.svg"),
+                    icon: Icon(
+                      _iconAddFavorite,
+                      color: _iconColor,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        toggleFavorite();
+                      });
+                    },
+                    splashRadius: 30,
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

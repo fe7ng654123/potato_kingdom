@@ -69,13 +69,21 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ))),
             InkWell(
-                onTap: () {
-                  navigateSecondPage(EditImagePage());
-                },
-                child: DisplayImage(
-                  imagePath: user.image,
-                  onPressed: () {},
-                )),
+              onTap: () {
+                // navigateSecondPage(EditImagePage());
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                maxRadius: MediaQuery.of(context).size.height * 0.1,
+                child: Container(
+                  child: Image.asset("assets/images/logo.png"),
+                ),
+              ),
+              // DisplayImage(
+              //   imagePath: user.image,
+              //   onPressed: () {},
+              // )
+            ),
             buildUserInfoDisplay(user.name, 'Name', EditNameFormPage()),
             buildUserInfoDisplay(user.phone, 'Phone', EditPhoneFormPage()),
             buildUserInfoDisplay(user.email, 'Email', EditEmailFormPage()),
