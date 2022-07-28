@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:potato_kingdom/constants.dart';
-import 'package:potato_kingdom/screens/auth/LogInScreen.dart';
-import 'package:potato_kingdom/screens/auth/RegisterScreen.dart';
+import 'package:potato_kingdom/screens/auth/login_screen.dart';
+import 'package:potato_kingdom/screens/auth/register_screen.dart';
 import 'package:potato_kingdom/screens/home/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';

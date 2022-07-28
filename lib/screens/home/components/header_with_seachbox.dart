@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:potato_kingdom/screens/auth/LogInScreen.dart';
+import 'package:potato_kingdom/screens/auth/login_screen.dart';
 
 import '../../../constants.dart';
 
@@ -13,12 +13,13 @@ class HeaderWithSearchBox extends StatelessWidget {
   final Size size;
 
   void GoLogIn(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MyLogin(),
-      ),
-    );
+    Navigator.pushNamed(context, 'login');
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => MyLogin(),
+    //   ),
+    // );
   }
 
   @override

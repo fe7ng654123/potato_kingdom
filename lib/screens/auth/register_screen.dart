@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potato_kingdom/constants.dart';
+import './firebase_helper.dart';
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -9,6 +10,9 @@ class MyRegister extends StatefulWidget {
 }
 
 class _MyRegisterState extends State<MyRegister> {
+  String email = '';
+  String pw = '';
+  String name = '';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,6 +43,9 @@ class _MyRegisterState extends State<MyRegister> {
                   top: MediaQuery.of(context).size.height * 0.27),
               child: Column(children: [
                 TextField(
+                  onChanged: (value) {
+                    name = value;
+                  },
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -56,6 +63,9 @@ class _MyRegisterState extends State<MyRegister> {
                   height: 30,
                 ),
                 TextField(
+                  onChanged: (value) {
+                    email = value;
+                  },
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -73,6 +83,9 @@ class _MyRegisterState extends State<MyRegister> {
                   height: 30,
                 ),
                 TextField(
+                  onChanged: (value) {
+                    pw = value;
+                  },
                   obscureText: true,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -106,7 +119,10 @@ class _MyRegisterState extends State<MyRegister> {
                         backgroundColor: const Color(0xff4c505b),
                         child: IconButton(
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            FirebaseHelper.saveUser(
+                                context: context, email: email, password: pw);
+                          },
                           icon: const Icon(Icons.arrow_forward),
                         ),
                       ),
@@ -119,7 +135,8 @@ class _MyRegisterState extends State<MyRegister> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'login');
+                          // Navigator.pushNamed(context, 'login');
+                          Navigator.popAndPushNamed(context, 'login');
                         },
                         child: const Text(
                           'Login',

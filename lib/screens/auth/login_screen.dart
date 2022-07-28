@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potato_kingdom/constants.dart';
-import 'package:potato_kingdom/screens/auth/RegisterScreen.dart';
+import 'package:potato_kingdom/screens/auth/register_screen.dart';
 
 class MyLogin extends StatefulWidget {
   // const MyLogin({Key? key}) : super(key: key);
